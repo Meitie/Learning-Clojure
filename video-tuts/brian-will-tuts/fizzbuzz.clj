@@ -2,11 +2,11 @@
 ; [1 2 fizz 4 buzz 6 7 8 fizz buzz 11 fizz 13 14 fizzbuzz]
 ;; replace every 3rd - fizz, 5th - buzz, 15 - fizzbuzz
 
-(defn fizzbuzz []
+(defn fizz-buzz []
   (loop [i 1]
     (if (<= i 100)
       (do
-        (if (and (= (rem i 3) 0) (= (rem i 5)) 0)
+        (if (and (= (rem i 3) 0) (= (rem i 5) 0))
           (println "FizzBuzz")
           (if (= (rem i 3) 0)
             (println "Fizz")
@@ -15,13 +15,20 @@
               (println i))))
         (recur (inc i))))))
 
+(fizz-buzz)
 
+;; using macro called "cond". kinda similar to a switch statements in java
 
-(defn fizz-buzz []
+(defn fizz-buzz-cond []
   (loop [i 1]
-    ))
+    (if (<= i 100)
+      (do
+        (cond
+          (and (= (rem i 3) 0) (= (rem i 5) 0)) (println "FizzBuzz")
+          (= (rem i 3) 0) (println "Fizz")
+          (= (rem i 5) 0) (println "Buzz")
+          :else (println i))
+        (recur (inc i))))))
 
 
-
-
-(fizzbuzz [1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16])
+(fizz-buzz-cond)
