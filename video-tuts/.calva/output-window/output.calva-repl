@@ -1,0 +1,188 @@
+; Jacking in...
+; Aborting jack-in. No project type selected.
+; Jacking in...
+; Starting Jack-in Terminal: clojure -Sdeps '{:deps {nrepl/nrepl {:mvn/version,"0.9.0"},cider/cider-nrepl {:mvn/version,"0.27.4"}}}' -M -m nrepl.cmdline --middleware "[cider.nrepl/cider-middleware]"
+; Hooking up nREPL sessions...
+; Connected session: clj
+; TIPS:
+;   - You can edit the contents here. Use it as a REPL if you like.
+;   - `alt+enter` evaluates the current top level form.
+;   - `ctrl+enter` evaluates the current form.
+;   - `alt+up` and `alt+down` traverse up and down the REPL command history
+;      when the cursor is after the last contents at the prompt
+;   - Clojure lines in stack traces are peekable and clickable.
+clj꞉user꞉>  ; Use `alt+enter` to evaluate
+; Jack-in done.
+clj꞉user꞉> 
+(println "hello")
+hello
+nil
+clj꞉user꞉> (+ 1 1
+              )
+2
+clj꞉user꞉> 
+6
+clj꞉user꞉> 
+clj꞉user꞉> 
+6
+clj꞉user꞉> 
+clj꞉user꞉> 
+clj꞉user꞉> 
+6
+clj꞉user꞉> 
+6
+clj꞉user꞉> 
+6
+clj꞉user꞉> 
+6
+clj꞉user꞉> 
+clj꞉user꞉> 
+11
+clj꞉user꞉> 
+11
+clj꞉user꞉> 
+11
+clj꞉user꞉> 
+11
+clj꞉user꞉> 
+11
+clj꞉user꞉> 
+clj꞉user꞉> 
+11
+clj꞉user꞉> 
+11
+clj꞉user꞉> 
+nil
+clj꞉user꞉> 
+java.lang.Double
+clj꞉user꞉> 
+nil
+clj꞉user꞉> 
+java.lang.Long
+clj꞉user꞉> 
+java.lang.String
+clj꞉user꞉> 
+11
+clj꞉user꞉> 
+nil
+clj꞉user꞉> 
+"string"
+clj꞉user꞉> 
+"string"
+clj꞉user꞉> 
+"string"
+clj꞉user꞉> 
+"string"
+clj꞉user꞉> 
+"string"
+clj꞉user꞉> 
+"string"
+clj꞉user꞉> 
+"string"
+clj꞉user꞉> 
+"string"
+clj꞉user꞉> 
+"string"
+clj꞉user꞉> 
+clj꞉user꞉> 
+"string"
+clj꞉user꞉> 
+[1 2 3]
+clj꞉user꞉> 
+[1 2 3]
+clj꞉user꞉> 
+[1 2 3]
+clj꞉user꞉> 
+#'user/temp
+clj꞉user꞉> 
+#'user/temp
+clj꞉user꞉> 
+#'user/temp
+clj꞉user꞉> 
+#'user/temp
+clj꞉user꞉> 
+#'user/temp
+clj꞉user꞉> 
+[1 2 3]
+clj꞉user꞉> 
+[1 2 3]
+clj꞉user꞉> 
+[1 2 3]
+clj꞉user꞉> 
+something
+clj꞉user꞉> 
+something
+clj꞉user꞉> 
+#'user/temp
+clj꞉user꞉> 
+something
+clj꞉user꞉> 
+#'user/temp
+clj꞉user꞉> 
+[1 2 3]
+clj꞉user꞉> 
+#'user/temp
+clj꞉user꞉> 
+[1 2 3 "something"]
+clj꞉user꞉> 
+[1 2 3]
+clj꞉user꞉> 
+; Execution error (ClassCastException) at user/eval7481 (REPL:27).
+; java.lang.Long cannot be cast to clojure.lang.IFn
+clj꞉user꞉> 
+(1 2 3)
+clj꞉user꞉> 
+[1 2 3]
+clj꞉user꞉> 
+[1 2 3]
+clj꞉user꞉> 
+#'user/temp
+clj꞉user꞉> 
+[1 2 3 "something" \c]
+clj꞉user꞉> 
+java.lang.Character
+clj꞉user꞉> 
+(1 2 3)
+clj꞉user꞉> 
+#'user/temp-vector
+clj꞉user꞉> 
+#'user/temp-list
+clj꞉user꞉> 
+[1 2 3 "something" \c 10]
+clj꞉user꞉> 
+(10 1 2 3)
+clj꞉user꞉> 
+[1 2 3 "something" \c]
+clj꞉user꞉> 
+(1 2 3)
+clj꞉user꞉> 
+[1 2 3 "something" \c 10]
+clj꞉user꞉> 
+(10 1 2 3)
+clj꞉user꞉> 
+true
+clj꞉user꞉> 
+false
+clj꞉user꞉> 
+(1 2 3 "something" \c)
+clj꞉user꞉> 
+1
+clj꞉user꞉> 
+1
+clj꞉user꞉> 
+2
+clj꞉user꞉> 
+2
+clj꞉user꞉> 
+#{1 3 2}
+clj꞉user꞉> 
+; Syntax error compiling at (user.clj:0:0).
+; Unable to resolve symbol: temp-set in this context
+clj꞉user꞉> 
+; Syntax error reading source at (REPL:54:11).
+; Reader tag must be a symbol
+clj꞉user꞉> 
+#'user/temp-set
+clj꞉user꞉> 
+#{1 3 2}
+clj꞉user꞉> 
