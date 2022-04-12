@@ -32,3 +32,5 @@
      (loop [val n i n]
        (if (<= i 1) val 
            (recur (*' val (dec i)) (dec i))))))
+
+(factorial-bigint-loop 100)
