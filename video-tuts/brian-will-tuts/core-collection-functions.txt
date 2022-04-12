@@ -1,0 +1,54 @@
+//core collections
+count      : returns the number of elements / key-value pairs in a collection.
+list?      : returns true if the argument is a list, otherwise false.
+vector?    : returns true if the argument is a vector, otherwise false.
+map?       : returns true if the argument is a map, otherwise false.
+contains?  : returns true if the collection contains the key/index, otherwise false.
+
+(count {3 6, "hi" 8})         :returns true (the map has 2 key-value pairs)
+(count [7 8 9 10 11])         :returns 5 (total num elems in vector)
+(count '(7 8 9 10 11))        :returns 5 (total num elements in list)
+
+(contains? {3 6} 3)           :returns true
+(contains? {3 6} "hai")       :returns false
+
+(contains? [7 8 9 10 11] 2)   :returns true (vector has index poisiton of 2)
+(contains? [7 8 9 10 11] -7)  :returns false (vector does not have index position of -7)
+
+(contains? '(7 8 9 10 11) 2)  :returns false (constains? always returns false for lists)
+
+
+
+//more core collections
+conj       :'conjoin' returns a new collection with added element or key-value pair
+assoc      :'associate' returns new collection with added/modded value for a given key
+dissoc     :'dissociate' returns new map in which a key has been removed.
+merge      :returns a new map that combines the key-value pairs of one or more maps
+
+(conj {3 6, "hi" 8} ["bye" 7])  :returns {3 6, "hi" 8, "bye" 7}
+(conj {3 6, "hi" 8} ["hi" 7])   :returns {3 6, "hi" 7}
+
+(conj [7 8 9 10 11] true)   :returns [7 8 9 10 11 true]
+(conj '(7 8 9 10 11) true)   :returns [true 7 8 9 10 11]
+
+(assoc {3 6, "hi" 8} ["bye" 7])  :returns {3 6, "hi" 8, "bye" 7}
+(assoc {3 6, "hi" 8} ["hi" 7])   :returns {3 6, "hi" 7}
+
+(assoc [7 8 9 10 11] 3 true)   :returns [7 8 9 true 11]
+(assoc [7 8 9 10 11] 5 true)   :returns [7 8 9 10 11 true]
+(assoc [7 8 9 10 11] 6 true)   :throws IndexOutOfBoundsException
+
+(assoc '(7 8 9 19 11) 3 true)   :throws exception (assoc doesn't work on lists)
+
+(dissoc {3 6, "hi" 8} "hi")       :returns {3 6}
+(dissoc {3 6, "hi" 8} "bye")      :returns {3 6, "hi" 8}
+//dissoc throws exception on lists and vectors as it does not work on them
+
+(merge {3 6, "hi" 8})             :returns {3 6, "hi" 8}
+(merge {3 6, "hi" 8} {"hi" 7 :yo 5})   :returns {3 6, "hi" 7, :yo 5}
+
+
+//more core collections
+get                    :returns value for a given key or index in a collection
+pop                    :returns a new collection without the first element/key-vallue pair
+peek                   :returns the element / key-value pair that would be removed by the pop

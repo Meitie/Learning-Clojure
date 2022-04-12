@@ -1,0 +1,19 @@
+To first understand remaining collection types, one must first understand sequences
+Sequences - is not a particiluar set of collections but rather and interface 
+that is a set of operations implemented by some collections 
+
+//A sequence is any collection type that supports two opperations:
+first       : returns the first element of the collection (or nil if the sequence has zero elements)
+rest        : returns a sequence of all the elements of the original except the first
+            : (returns an empty sequence if the original has zero or one elements)
+
+The seq function returns a sequence of a seq-able types element:
+(so even if they are not seek/iseq originally they can still be used i.e vectors and maps)
+
+(seq [7 8 9 10 11])        ; returns a sequence of (7 8 9 10 11)
+(seq '(7 8 9 10 11))       ; returns a list as it is
+(seq {3 6, "hi" 8})        ; returns a sequence of (["hi" 8] [3 6])
+
+if you want just the keys or vals you use their sequesnces
+(keys {3 6, "hi" 8})       ; returns a sequence of ("hi" 3)
+(vals {3 6, "hi" 8})       ; returns a sequence of (6 8)
