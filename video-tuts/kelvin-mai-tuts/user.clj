@@ -48,14 +48,32 @@
 
 ;; (second temp-list)
 
-(set [1 2 3 3])
+;; (set [1 2 3 3 3 3 3])
 
-(def temp-set
-  #{1 2 3})
+;; (def temp-set
+;;   #{1 2 3})
 
-temp-set
-(comment
-  temp-vector
-  temp-list
-  ;;
-  )
+;; temp-set
+;; (comment
+;;   temp-vector
+;;   temp-list
+;;   ;;
+;;   )
+
+
+;;hash maps
+(hash-map "a" 1
+          "b" 2)
+
+(def temp-map
+  {:strings [1 2 {"a" "b"}]
+   :some-key :some-value
+   :nested-thing {:another-key "value"}})
+
+temp-map
+
+;; get
+(get temp-map :some-key)
+(get (get temp-map :nested-thing) :another-key)
+(get-in temp-map [:nested-thing :another-key])
+;; mutations
