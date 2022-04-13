@@ -129,3 +129,74 @@ nrepl.middleware.session/session-exec (session.clj:218)
 nrepl.middleware.session/session-exec (session.clj:217)
 java.lang.Thread/run (Thread.java:750)
 clj꞉user꞉> 
+#'user/triple-winner?
+clj꞉user꞉> 
+#'user/triples
+clj꞉user꞉> 
+#'user/winner?
+clj꞉user꞉> 
+#'user/triples
+clj꞉user꞉> 
+#'user/full-board?
+clj꞉user꞉> 
+#'user/print-board
+clj꞉user꞉> 
+#'user/player-name
+clj꞉user꞉> 
+#'user/starting-board
+clj꞉user꞉> 
+#'user/player-sequence
+clj꞉user꞉> 
+#'user/get-move
+clj꞉user꞉> 
+#'user/take-turn
+clj꞉user꞉> 
+#'user/play-game
+clj꞉user꞉> 
+Current board:
+1 2 3
+4 5 6
+7 8 9
+Select your move, player x  (press 1-9 and hit enter): 
+Current board:
+1 x 3
+4 5 6
+7 8 9
+Select your move, player o  (press 1-9 and hit enter): 
+Current board:
+1 x 3
+4 5 6
+7 8 o
+Select your move, player x  (press 1-9 and hit enter): 
+Current board:
+x x 3
+4 5 6
+7 8 o
+Select your move, player o  (press 1-9 and hit enter): 
+Current board:
+x x o
+4 5 6
+7 8 o
+Select your move, player x  (press 1-9 and hit enter): 
+Current board:
+x x o
+4 5 x
+7 8 o
+Select your move, player o  (press 1-9 and hit enter): 
+Current board:
+x x o
+4 5 x
+o 8 o
+Select your move, player x  (press 1-9 and hit enter): 
+Current board:
+x x o
+4 x x
+o 8 o
+Select your move, player o  (press 1-9 and hit enter): 
+Current board:
+x x o
+4 x x
+o o o
+Player  o wins!
+nil
+clj꞉user꞉> 

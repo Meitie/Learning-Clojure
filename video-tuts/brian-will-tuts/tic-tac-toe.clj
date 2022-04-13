@@ -1,6 +1,6 @@
 (defn triple-winner? [triple]
   (if (every? #{:x} triple) :x
-      (if (every? #{:o triple}) :o)))
+      (if (every? #{:o} triple) :o)))
   
 (declare triples) ; allows us to declare triples in the namespace so it can be used before it is defined (used in winner)
   
