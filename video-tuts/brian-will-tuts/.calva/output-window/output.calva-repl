@@ -1,0 +1,131 @@
+; Jacking in...
+; nREPL Connection was closed
+; Starting Jack-in Terminal: clojure -Sdeps '{:deps {nrepl/nrepl {:mvn/version,"0.9.0"},cider/cider-nrepl {:mvn/version,"0.27.4"}}}' -M -m nrepl.cmdline --middleware "[cider.nrepl/cider-middleware]"
+; Hooking up nREPL sessions...
+; Connected session: clj
+; TIPS:
+;   - You can edit the contents here. Use it as a REPL if you like.
+;   - `alt+enter` evaluates the current top level form.
+;   - `ctrl+enter` evaluates the current form.
+;   - `alt+up` and `alt+down` traverse up and down the REPL command history
+;      when the cursor is after the last contents at the prompt
+;   - Clojure lines in stack traces are peekable and clickable.
+clj꞉user꞉> 
+; Jack-in done.
+clj꞉user꞉> 
+; Syntax error compiling at (tic-tac-toe.clj:2:7).
+; Unable to resolve symbol: triple in this context
+clj꞉user꞉> 
+; Syntax error compiling at (tic-tac-toe.clj:0:0).
+; Unable to resolve symbol: triple in this context
+clj꞉user꞉> 
+#'user/triple-winner?
+clj꞉user꞉> 
+#'user/triples
+clj꞉user꞉> 
+#'user/winner?
+clj꞉user꞉> 
+#'user/triples
+clj꞉user꞉> 
+#'user/full-board?
+clj꞉user꞉> 
+#'user/print-board
+clj꞉user꞉> 
+#'user/player-name
+clj꞉user꞉> 
+#'user/starting-board
+clj꞉user꞉> 
+#'user/player-sequence
+clj꞉user꞉> 
+; Syntax error macroexpanding clojure.core/let at (tic-tac-toe.clj:41:3).
+; (. Integer parseInt (read-line)) - failed: simple-symbol? at: [:bindings :form :local-symbol] spec: :clojure.core.specs.alpha/local-name
+(. Integer parseInt (read-line)) - failed: vector? at: [:bindings :form :seq-destructure] spec: :clojure.core.specs.alpha/seq-binding-form
+(. Integer parseInt (read-line)) - failed: map? at: [:bindings :form :map-destructure] spec: :clojure.core.specs.alpha/map-bindings
+(. Integer parseInt (read-line)) - failed: map? at: [:bindings :form :map-destructure] spec: :clojure.core.specs.alpha/map-special-binding
+clj꞉user꞉> 
+#'user/take-turn
+clj꞉user꞉> 
+#'user/play-game
+clj꞉user꞉> 
+; Execution error (ArityException) at user/triple-winner? (REPL:3).
+; Wrong number of args (1) passed to: clojure.core/every?
+clj꞉user꞉> 
+#'user/get-move
+clj꞉user꞉> 
+#'user/player-sequence
+clj꞉user꞉> 
+#'user/starting-board
+clj꞉user꞉> 
+#'user/player-name
+clj꞉user꞉> 
+#'user/print-board
+clj꞉user꞉> 
+#'user/full-board?
+clj꞉user꞉> 
+#'user/triple-winner?
+clj꞉user꞉> 
+#'user/triples
+clj꞉user꞉> 
+#'user/winner?
+clj꞉user꞉> 
+#'user/triples
+clj꞉user꞉> 
+#'user/take-turn
+clj꞉user꞉> 
+#'user/play-game
+clj꞉user꞉> 
+; Execution error (ArityException) at user/triple-winner? (REPL:3).
+; Wrong number of args (1) passed to: clojure.core/every?
+clj꞉user꞉> 
+#'user/triple-winner?
+clj꞉user꞉> 
+#'user/triples
+clj꞉user꞉> 
+; Execution error (ArityException) at user/triple-winner? (REPL:3).
+; Wrong number of args (1) passed to: clojure.core/every?
+clj꞉user꞉> 
+#'user/play-game
+clj꞉user꞉> 
+#'user/take-turn
+clj꞉user꞉> 
+; Execution error (ArityException) at user/triple-winner? (REPL:3).
+; Wrong number of args (1) passed to: clojure.core/every?
+clj꞉user꞉> 
+; Execution error (ArityException) at user/triple-winner? (REPL:3).
+; Wrong number of args (1) passed to: clojure.core/every?
+clj꞉user꞉> 
+user/triple-winner? (NO_SOURCE_FILE:3)
+user/triple-winner? (NO_SOURCE_FILE:1)
+clojure.core/map (core.clj:2772)
+clojure.lang.LazySeq/sval (LazySeq.java:42)
+clojure.lang.LazySeq/seq (LazySeq.java:51)
+clojure.lang.RT/seq (RT.java:535)
+clojure.core/seq (core.clj:139)
+clojure.core/filter (core.clj:2826)
+clojure.lang.LazySeq/sval (LazySeq.java:42)
+clojure.lang.LazySeq/seq (LazySeq.java:51)
+clojure.lang.LazySeq/first (LazySeq.java:73)
+clojure.lang.RT/first (RT.java:692)
+clojure.core/first (core.clj:55)
+user/winner? (NO_SOURCE_FILE:9)
+user/winner? (NO_SOURCE_FILE:8)
+user/play-game (NO_SOURCE_FILE:60)
+user/play-game (NO_SOURCE_FILE:58)
+user/eval7473 (NO_SOURCE_FILE:71)
+clojure.lang.Compiler/eval (Compiler.java:7194)
+clojure.core/eval (core.clj:3215)
+clojure.core/eval (core.clj:3211)
+nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:87)
+clojure.core/apply (core.clj:667)
+clojure.core/with-bindings* (core.clj:1990)
+nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:87)
+clojure.main/repl (main.clj:437)
+clojure.main/repl (main.clj:458)
+clojure.main/repl (main.clj:368)
+nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:84)
+nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:56)
+nrepl.middleware.interruptible-eval/interruptible-eval (interruptible_eval.clj:152)
+nrepl.middleware.session/session-exec (session.clj:218)
+nrepl.middleware.session/session-exec (session.clj:217)
+java.lang.Thread/run (Thread.java:750)
+clj꞉user꞉> 
