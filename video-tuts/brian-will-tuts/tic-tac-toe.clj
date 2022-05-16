@@ -47,12 +47,12 @@
 
 ; 'player' as identified by their mark (:x or :o)
 (defn take-turn [player board]
-  (println "Select your move, player" (player-name player) " (press 1-9 and hit enter): ")
+  (println "Select your move, player" (player-name player) "(press 1-9 and hit enter): ")
   (loop [move (get-move board)]
     (if move
       (assoc board (dec move) player) ;returns a new state of the board (since immutable you need to save an updated board)
       (do
-        (println "Move was invalid. Select your move, player " (str (player-name player) ": "))
+        (println "Move was invalid. Select your move, player" (str (player-name player) ": "))
         (recur (get-move board))))))
 
 (defn play-game []
@@ -61,7 +61,7 @@
       (println "Current board:")
       (print-board board)
       (cond
-        winner (println "Player " (player-name winner) "wins!")
+        winner (println "Player" (player-name winner) "wins!")
         (full-board? board) (println "Game is a draw.")
         :else
         (recur
