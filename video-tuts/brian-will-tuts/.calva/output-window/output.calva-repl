@@ -48,3 +48,4 @@ clj꞉examples.snake꞉> 
 ; Syntax error compiling at (.calva/output-window/output.calva-repl:47:1).
 ; Unable to resolve symbol: game in this context
 clj꞉examples.snake꞉> 
+; nREPL Connection was closed
