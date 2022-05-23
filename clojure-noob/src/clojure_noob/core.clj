@@ -79,3 +79,6 @@
 ;; Lists
 ;;====================================
 
+;; lists are similar to vectors in that they are a linear collection of values, 
+
+;;okay
