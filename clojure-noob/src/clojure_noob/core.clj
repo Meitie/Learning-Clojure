@@ -79,6 +79,56 @@
 ;; Lists
 ;;====================================
 
-;; lists are similar to vectors in that they are a linear collection of values, 
+;; lists are similar to vectors in that they are a linear collection of values, there are some difference to vectors, e.g. You cannot retrieve a list element with get.
+;; To write a list literal, just insert elements with a `'` before parenthesis
 
-;;okay
+;; '(1 2 3 4) => (1 2 3 4)
+
+
+;; to grab an element use the `nth` fn
+;; (nth '(:a :b :c) 0) => :a
+;; (nth '(:a :b :c) 2) => :c
+
+;; lists can have any type just like vectors and you can create one with `list` fn
+;; (list 1 "two" {3 4}) => (1 "two" {3 4})
+
+;; elements are added to the beginning of a list
+;; (conj '(1 2 3) 4) => (4 1 2 3)
+
+;; When should you use a list and when should you use a vector? A good rule of thumb is that if you need to easily add items to the beginning of a sequence or if you’re writing a macro, you should use a list. Otherwise, you should use a vector. As you learn more, you’ll get a good feel for when to use which.
+
+
+;;====================================
+;; Sets
+;;====================================
+
+;; Sets are collections of unique values, clojure has hash sets and sorted sets
+;; literal notation for a hash set:
+
+;; #{"kurt vonnegut" 20 :icicle}
+;; can also  use  `hash-set` to create a set:
+
+;; (hash-set 1 1 2 2) => #{1 2}
+;; NOTE: that double's of a value are edited as you can only have 1 unique value
+
+;; (conj #{:a :b} :b) => #{:a :b}
+;; although you can conj to a set, there already exists so it is not added
+;; you can also create a set from a vector
+;; (set [3 3 3 4 4]) => #{3 4}
+
+;; can check if it has membership with `contains?`, `get` returns the value, `contains?` returns true or false
+;; depends if it contains the value or not
+;; (contains? #{:a :b} :a) => true
+;; (contains? #{:a :b} 3)  => false
+;; (contains? #{nil} nil)  => true
+
+;; how to use a keyword
+;; (:a #{:a :b}) => :a
+
+;; how you use get
+;; (get #{:a :b} :a)     => :a
+;; (get #{:a nil} nil)   => nil
+;; (get #{:a :b} "kurt") => nil
+
+;; note when using get, to test if a set contains nil, will always return nil, which may be confusing so you could
+;; instead use the "contains?" operator to test for nil.
