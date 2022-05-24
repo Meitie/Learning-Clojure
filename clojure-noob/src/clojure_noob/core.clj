@@ -132,3 +132,27 @@
 
 ;; note when using get, to test if a set contains nil, will always return nil, which may be confusing so you could
 ;; instead use the "contains?" operator to test for nil.
+
+
+
+;; ======================================================
+;;  FUNCTIONS
+;; ======================================================
+;;
+;; different kinds of `fn's`, 
+;; • Calling fns 
+;; • How fn different from macros and special forms
+;; • Defining fns
+;; • Anonymous fns
+;; • Returning fns
+
+;;====================================
+;; Calling functions:
+;;====================================
+
+;; (+ 1 2 3 4)       => 10
+;; (* 1 2 3 4)       => 24
+;; (first [1 2 3 4]) => 1
+;; remember that all clojure opertaions have the same syntax,opening paren -> operator -> operands -> closing parentheis
+;; fn operation = where the operatorsis a fn
+;; fn expressions = an expression that returns a fn
