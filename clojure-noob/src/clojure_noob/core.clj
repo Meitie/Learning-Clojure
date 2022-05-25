@@ -156,3 +156,35 @@
 ;; remember that all clojure opertaions have the same syntax,opening paren -> operator -> operands -> closing parentheis
 ;; fn operation = where the operatorsis a fn
 ;; fn expressions = an expression that returns a fn
+
+;; (or +)
+
+;; ((or + -) 1 2 3) => 6
+;; because or returns first truthy value (which is +) it then evals to 1+2+3
+
+;; couple more functions that validate and return 6
+;; ((and (= 1 1) +) 1 2 3) => 6
+;; ((first [+ 0]) 1 2 3) => 6
+
+;; numbers and strings are not functions so (1 2 3 4) / ("test" 1 2 3) would not work
+
+;; WHEN YOU GET THE ERROR "<X> CANNOT BE CAST TO CLOJURE.LANG.IFN" then it means that you
+;; are trying to use something as a function when it is not a function.
+
+;; function flexibility syntactically functions can take any expressions as arguments
+;; including other functions or return a function "These are called /higher order functions'/"
+
+;; these are said to support first class functions as you can support and treat functions as values the same way you treat data types like numbers and vectors
+
+;; map fn not to be confused by map data structure, creates a new list by applying a function to each member of the collection
+;; (inc 1.1) => 2.1
+;; (map inc [0 1 2 3]) => (1 2 3 4)
+
+;; clojure evaluates all function arguments recursively before passing them to the function. 
+;; here is how clojure would evaluate a function call whose arguments are also function calls;
+
+;; (+ (inc 199) (/ 100 (- 7 2)));
+;; -> (+ 200 (/ 100 (- 7 2))); // evaluated to "(inc 199)"
+;; -> (+ 200 (/ 100 (5))); / evaluated (-7 2)
+;; -> (+ 200 20) / evaltuated (/ 100 5)
+;; => 200 / final evaluation.
