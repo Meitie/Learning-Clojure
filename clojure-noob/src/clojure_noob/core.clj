@@ -188,3 +188,196 @@
 ;; -> (+ 200 (/ 100 (5))); / evaluated (-7 2)
 ;; -> (+ 200 20) / evaltuated (/ 100 5)
 ;; => 200 / final evaluation.
+
+
+;;==============================================
+;; Function Calls, Macro Calls, Special Forms
+;;==============================================
+
+;; the thing that makes a special form `special` is that unlike fn calls, they don't always evaluate all of their
+;; opperands, an example of a special form is an if statement
+
+;; (if boolean-form
+;;   then-form
+;;   optional-else-form)
+
+;; clearly we only want clojure to evaluate only one of the 2 coniditions, and it does so based on `boolean-form`.
+;; another note on macro/fn calls is that they cannot be used as arugments to functions.
+
+
+;;==============================================
+;; Defining Functions
+;;==============================================
+
+;; Functions are composed with 5 main parts:
+;; · defn
+;; · Function name
+;; · docstring describing fn (optional)
+;; · Params listed in brackets
+;; · Function body
+
+;; 1&2 : (defn too-enthusiastic 
+;; 3   :   "Return a cheer that might be a bit too enthusiastic"
+;; 4   :   [name]
+;; 5   :   (str "OH, MY. GOD! " name "YOU ARE MOST DEFINITLY LIKE THE BEST!"))
+
+;; (too-enthusiastic "Zelda") -> how to call the fn
+
+;; === The docstring === 
+;; is a suseful way to describe and document your code. You can view it in the REPL with `(doc fn-name)` e.g (doc map).
+
+;; === Parameters and Arity ===
+;; Clojure fns can be defined with zero or more params, values passed ot fn are called args, adn the args can be any type
+;; the number of params in the fn is arity, fns can have differetn arities.
+
+;; (defn no-param 
+;;   [] 
+;;   "I take no pararms")
+;; (defn one-param
+;;   [x]
+;;   (str "I take one parameter: " x))
+;; (defn two-params
+;;   [x y]
+;;   (str "Two parameters! That's nothing! Pah! I will smoosh them "
+;;        "together to spite you! " x y))
+
+;; you can also define a fn with multiple arities, so it runs a different body depending on the reqs.
+
+;; (defn multi-arity
+;;   ;; 3-arity arguments and body
+;;   ([first-arg second-arg third-arg]
+;;    (do-things first-arg second-arg third-arg))
+;;   ;; 2-arity arguments and body
+;;   ([first-arg second-arg]
+;;    (do-things first-arg second-arg))
+;;   ;; 1-arity arguments and body
+;;   ([first-arg]
+;;    (do-things first-arg)))
+
+;; NOTE: that each arity has its own set of parens around it. This is called "arity overload".
+
+
+;; you can also add `rest parameter`, as in "put the rest of these argurments in a list with the following name".
+;; the rest is indicated by an `&`. seen below examples:
+;; when you provide arguments to variable-arity fns, the arguments are treated as a list, You can mix the params with normal parameters, but the rest parameter has to come last;
+;; (defn codger-communication
+;;   [whippersnapper]
+;;   (str "Get off my lawn, " whippersnapper "!!!"))
+
+;; (defn codger
+;; ➊   [& whippersnappers]
+;;   (map codger-communication whippersnappers))
+
+;; (codger "Billy" "Anne-Marie" "The Incredible Bulk")
+;; ; => ("Get off my lawn, Billy!!!" "Get off my lawn, Anne-Marie!!!" "Get off my lawn, The Incredible Bulk!!!")
+
+;; (defn favorite-things
+;;   [name & things]
+;;   (str "Hi, " name ", here are my favorite things: "
+;;        (clojure.string/join ", " things)))
+
+;; (favorite-things "Doreen" "gum" "shoes" "kara-te")
+;; ; => "Hi, Doreen, here are my favorite things: gum, shoes, kara-te"
+
+
+
+;; === Destructuring === 
+
+;; The basic idea behind destructuring is that it lets you concisely bind names to values within a collection:
+
+;; Returns the first element of a collection
+;; (defn my-first
+;;   [[first-thing]]
+;;   first-thing)
+;; (my-first ["oven" "bike" "war-axe"]) => "oven"
+;; in the above fn, the first element of the vector, you tell `my-first` to do this with `first-thing` in a vector'
+
+;; when you destructure a vector a list, you can name as many elements as you want and also use a rest param
+;; (defn chooser
+;;   [[first-choice second-choice & unimportant-choices]]
+;;   (println (str "Your first choice is: " first-choice))
+;;   (println (str "Your second choice is: " second-choice))
+;;   (println (str "We're ignoring the rest of your choices. "
+;;                 "Here they are in case you need to cry over them: "
+;;                 (clojure.string/join ", " unimportant-choices))))
+
+;; (chooser ["Marmalade", "Handsome Jack", "Pigpen", "Aquaman"])
+;; => Your first choice is: Marmalade 
+;; => Your second choice is: Handsome Jack
+;; => We're ignoring the rest of your choices. Here they are in case you need to cry over them: Pigpen, Aquaman
+
+;; above the rest params `& unimportant-choses` handles any number of additional choices.
+
+;; You can also destructure maps, in a same way that you tell clojute to desctructure above, but you destructure maps
+;; by providaing a map as a parameter
+;; (defn announce-treasure-location
+;;   [{lat :lat lng :lng}]
+;;   (println (str "Treasure lat: " lat))
+;;   (println (str "Treasure lng: " lng)))
+
+;; (announce-treasure-location {:lat 28.22 :lng 81.33})
+;; => Treasure lat: 28.22
+;; => Treasure lng: 81.33
+
+;; We often want to just break keywords out of a map, so theres a shorter syntax for that
+;; (defn announce-treasure-location
+;;   [{:keys [lat lng]}]
+;;   (println (str "Treasure lat: " lat))
+;;   (println (str "Treasure lng: " lng)))
+
+;; you can retain access to the previous map arugment by using the `:as` keyword, in the following example, you can 
+;; access the following exmaple with the `treasure-location`
+
+;; (defn recieve-treasure-location
+;;   [{:keys [lat lng] :as treausre-location}]
+;;   (println (str "Treasure lat: " lat)))
+;;   (println (str "Treasure lng: " lng)))
+
+
+;; === Function body === 
+
+;; The function body can contain forms of any kind, Clojure automatically returns the last form evaled.
+;; (defn illustrative-fn []
+;;  (+ 5 3)
+;;  "joe")
+;; the above fn returns the value "joe"
+
+;; (defn number-comment
+;;   [x]
+;;   (if (> x 6)
+;;     "Oh my gosh! What a big number!"
+;;     "That number's OK, I guess"))
+
+;; (number-comment 5) => "That number's OK, I guess"
+;; (number-comment 7) => "Oh my gosh! What a big number!"
+
+;; all functions are created equal, which is the underlying simplicity of Clojure.
+
+
+;; === Anonymous Functions === 
+
+;; in clojure functions don't always need to have a name, in fact you use anon fn all the time.
+;; There are 2 ways to create an annon fn
+;; 1. fn and #
+
+;; --- The `fn` form: ---
+;; (fn [param-list]
+;;    function body)
+
+;; ((fn [x] (* x 3)) 8) => 24
+
+;; You can treat fn nearly identical to defn, as it looks similar. The param list and body work the same,
+;; as such you can use argument destructuring, rest params, etc, you can even `def` it to name it.
+;; (def my-speical-multi (fn [x] (* x 3)))
+;; (my-special-multi 12) => 36
+
+;; --- the `#` form: ---
+;; (#(* % 3) 8)
+;; # = fn, % = param passed.
+
+;; example passing an annon fn to an argument to a map:
+;; (map #(str "Hi, " %)
+;;    ["Darth Vader" "Mr. Magoo"]) 
+;; => ("Hi, Darth Vader" "Hi, Mr. Magoo")
+
+;; If your annon fn houses more then 1 arg, you can call them with %n, e.g %1 %2 %3
