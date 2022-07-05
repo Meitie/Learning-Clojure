@@ -1,10 +1,11 @@
 (ns clojure-noob.core
-  (:gen-class))
+  (:gen-class)
+  (:require [replace :as clojure.string]))
 
 (defn -main
   "I don't do a whole lot ... yet."
   [& args]
-  (println "I am a little teapot!"))aaa
+  (println "I am a little teapot!"))
 
 
 
@@ -389,29 +390,108 @@
 ;; #(* % 3)
 ;; #(* %1 %2 %3 4)
 
-(#(str %1 " and " %2) "cornbread" "butter beans")
-; => "cornbread and butter beans"
+;; (#(str %1 " and " %2) "cornbread" "butter beans")
+;; ; => "cornbread and butter beans"
 
-(#(identity %&) 1 "blarg" :yip)
-; => (1 "blarg" :yip)
+;; (#(identity %&) 1 "blarg" :yip)
+;; ; => (1 "blarg" :yip)
 
 
-(def asym-hobbit-body-parts 
-  [{:name "head" :size 3}
-   {:name "left-ear" :size 1}
-   {:name "mouth" :size 1}
-   {:name "nose" :size 1}
-   {:name "neck" :size 2}
-   {:name "left-shoulder" :size 3}
-   {:name "left-upper-arm" :size 3}
-   {:name "chest" :size 10}
-   {:name "back" :size 10}
-   {:name "left-forearm" :size 3}
-   {:name "abdomen" :size 6}
-   {:name "left-kidney" :size 1}
-   {:name "left-hand" :size 2}
-   {:name "left-knee" :size 2}
-   {:name "left-thigh" :size 4}
-   {:name "left-lower-leg" :size 3}
-   {:name "left-achilles" :size 1}
-   {:name "left-foot" :size 2}])
+
+;;==============================================
+;; Putting It All Together
+;;==============================================
+
+;; (def asym-hobbit-body-parts
+;;   [{:name "head" :size 3}
+;;    {:name "left-ear" :size 1}
+;;    {:name "mouth" :size 1}
+;;    {:name "nose" :size 1}
+;;    {:name "neck" :size 2}
+;;    {:name "left-shoulder" :size 3}
+;;    {:name "left-upper-arm" :size 3}
+;;    {:name "chest" :size 10}
+;;    {:name "back" :size 10}
+;;    {:name "left-forearm" :size 3}
+;;    {:name "abdomen" :size 6}
+;;    {:name "left-kidney" :size 1}
+;;    {:name "left-hand" :size 2}
+;;    {:name "left-knee" :size 2}
+;;    {:name "left-thigh" :size 4}
+;;    {:name "left-lower-leg" :size 3}
+;;    {:name "left-achilles" :size 1}
+;;    {:name "left-foot" :size 2}])
+
+;; (defn matching-part
+;;   [part]
+;;   {:name (clojure.string/replace (:name part) #"^left-" "right-")
+;;    :size (:size part)})
+
+;; (defn symmetrize-body-parts
+;;   "Expects a seq of maps that have a :name and :size"
+;;   [asym-body-parts]
+;;   (loop [remaining-asym-parts asym-body-parts
+;;          final-body-parts []]
+;;     (if (empty? remaining-asym-parts)
+;;       final-body-parts
+;;       (let [[part & remaining] remaining-asym-parts]
+;;         (recur remaining
+;;                (into final-body-parts
+;;                      (set [part (matching-part part)])))))))
+
+;;==============================================
+;; LET
+;;==============================================
+
+(let [x 3]
+  x)
+; => 3
+
+(def dalmatian-list
+  ["Pongo" "Perdita" "Puppy 1" "Puppy 2"])
+(let [dalmatians (take 2 dalmatian-list)]
+  dalmatians)
+; => ("Pongo" "Perdita")
+
+
+(def x 0)
+(let [x 1] x)
+; => 1
+
+;; above the x is global, but then the second x in scoped to the let so it returns 1
+
+(let [x (inc x)] x)
+; => 1
+
+;; it grabs the global def x at 0 and inc the 0 to 1, as you have not reset x's value in this binding
+
+;; you can also use rest parametes in lets, just like in functions.
+
+(let [[pongo & dalmations] dalmatian-list]
+  [pongo dalmations])
+
+;; Notice that the value ofa  let form is the last form in its body that is evaluated. let forms follow all 
+;; destructuring rules introduced on page 48, "Calling Fnuctions".
+;; in this case [pongo & dalmatians] destructs dalmations-list, binding the string "Pongo" to the
+;; name pongo and list the rest of the dalmations to dalmations.
+
+
+;; let forms have 2 main uses. First, they provide clairy by allowing you to name things.
+;; Second they allow you to evaluate an expression only once and reuse the results.
+;; This is especially important when you need to use the result of an expensive function call,
+;; like an network api call.
+
+;;==============================================
+;; Set
+;;==============================================
+
+(into [] (set [:a :a]))
+; => [:a]
+
+;; set do not contain duplicates as such it will only return one [:a]
+;; Thus we can see how a let is useful to introduce local names for values, and simplify code.
+
+
+;;==============================================
+;; loop
+;;==============================================
