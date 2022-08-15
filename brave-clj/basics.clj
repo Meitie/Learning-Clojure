@@ -49,3 +49,51 @@
 (if nil
   "This won't be the result because nil is falsey"
   "nil is falsey")
+
+;; Equality
+(= 1 1)
+(= nil nil)
+(= 1 2)
+
+;; OR and AND
+(or false nil :large_I_mean_venti :why_cant_I_just_say_large)
+(or (= 0 1) (= "yes" "no"))
+(or nil)
+
+(and :free_wifi :hot_coffee)
+(and :feelin_super_cool nil false)
+
+;; Naming with DEF
+(def failed-protagonist-names
+  ["Larry Potter" "Doreen the Explor" "The Incredible Bulk"])
+
+failed-protagonist-names
+
+;; bindings slightly changed value, depending on values given with it
+;; instead of re-assigning values.
+(defn error-message
+  [severity]
+  (str "OH GOD! IT'S A DISASTER! WE'RE "
+       (if (= severity :mild)
+         "MILDLY INCONVENIENCED!"
+         "DOOMED!")))
+(error-message :mild)
+(error-message :bob)
+
+;; DATA STRUCTURES
+;; Numbers
+1   ;;integer
+1.2 ;;float
+1/5 ;;ratio
+
+;; Strings
+"lord voldemort"
+"\"He who must not be named\""
+"\"Great cow of Moscow!\" - Hermes Conrad"
+
+;; Maps
+{}
+{:first-name "Charlie"
+ :last-name "McFishwich"}
+{"string-key" +}
+{:name {:first "John" :middle "Harry" :last "Smith"}}

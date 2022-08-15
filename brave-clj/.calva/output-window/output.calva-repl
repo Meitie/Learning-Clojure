@@ -155,3 +155,42 @@ clj꞉user꞉> 
 clj꞉user꞉> 
 nil
 clj꞉user꞉> 
+#'user/failed-protagonist-names
+clj꞉user꞉> 
+["Larry Potter" "Doreen the Explor" "The Incredible Bulk"]
+clj꞉user꞉> 
+#'user/error-message
+clj꞉user꞉> 
+"OH GOD! IT'S A DISASTER! WE'RE MILDLY INCONVENIENCED!"
+clj꞉user꞉> 
+#'user/error-message
+clj꞉user꞉> 
+"OH GOD! IT'S A DISASTER! WE'RE DOOMED!"
+clj꞉user꞉> 
+1
+clj꞉user꞉> 
+1/5
+clj꞉user꞉> 
+1.2
+clj꞉user꞉> 
+"lord voldemort"
+clj꞉user꞉> 
+; Syntax error compiling at (Learning-Clojure/brave-clj/basics.clj:0:0).
+; Unable to resolve symbol: named in this context
+clj꞉user꞉> 
+"lord voldemort"
+clj꞉user꞉> 
+"\"He who must not be named"
+clj꞉user꞉> 
+"\"He who must not be named\""
+clj꞉user꞉> 
+"\"Great cow of Moscow!\" - Hermes Conrad"
+clj꞉user꞉> 
+{}
+clj꞉user꞉> 
+{:first-name "Charlie", :last-name "McFishwich"}
+clj꞉user꞉> 
+{"string-key" #object[clojure.core$_PLUS_ 0x617dbebc "clojure.core$_PLUS_@617dbebc"]}
+clj꞉user꞉> 
+{:name {:first "John", :middle "Harry", :last "Smith"}}
+clj꞉user꞉> 
