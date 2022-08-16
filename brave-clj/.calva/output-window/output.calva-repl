@@ -229,3 +229,45 @@ clj꞉user꞉> 
 clj꞉user꞉> 
 "No gnome knows how homes like Noah knows"
 clj꞉user꞉> 
+[3 2 1]
+clj꞉user꞉> 
+3
+clj꞉user꞉> 
+{:name "Pugsley Winterbottom"}
+clj꞉user꞉> 
+["creepy" "full" "moon"]
+clj꞉user꞉> 
+[1 2 3 4]
+clj꞉user꞉> 
+(1 2 3 4)
+clj꞉user꞉> 
+1
+clj꞉user꞉> 
+3
+clj꞉user꞉> 
+4
+clj꞉user꞉> 
+(4 1 2 3)
+clj꞉user꞉> 
+#{20 "kurt" :icicle}
+clj꞉user꞉> 
+#{1 2}
+clj꞉user꞉> 
+#{:b :a}
+clj꞉user꞉> 
+#{4 3}
+clj꞉user꞉> 
+true
+clj꞉user꞉> 
+false
+clj꞉user꞉> 
+true
+clj꞉user꞉> 
+:a
+clj꞉user꞉> 
+:a
+clj꞉user꞉> 
+nil
+clj꞉user꞉> 
+nil
+clj꞉user꞉> 
