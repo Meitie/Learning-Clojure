@@ -194,3 +194,38 @@ clj꞉user꞉> 
 clj꞉user꞉> 
 {:name {:first "John", :middle "Harry", :last "Smith"}}
 clj꞉user꞉> 
+{:b 2, :a 1}
+clj꞉user꞉> 
+1
+clj꞉user꞉> 
+{:c "ho hum"}
+clj꞉user꞉> 
+"unicorns?"
+clj꞉user꞉> 
+{:a "uni"}
+clj꞉user꞉> 
+"no hum"
+clj꞉user꞉> 
+nil
+clj꞉user꞉> 
+{:c "no hum"}
+clj꞉user꞉> 
+{:c "no hum"}
+clj꞉user꞉> 
+"no hum"
+clj꞉user꞉> 
+"The great Coffepot"
+clj꞉user꞉> 
+:a
+clj꞉user꞉> 
+:_?
+clj꞉user꞉> 
+1
+clj꞉user꞉> 
+; Syntax error reading source at (REPL:124:20).
+; Map literal must contain an even number of forms
+clj꞉user꞉> 
+1
+clj꞉user꞉> 
+"No gnome knows how homes like Noah knows"
+clj꞉user꞉> 

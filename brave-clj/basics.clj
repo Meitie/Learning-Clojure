@@ -97,3 +97,32 @@ failed-protagonist-names
  :last-name "McFishwich"}
 {"string-key" +}
 {:name {:first "John" :middle "Harry" :last "Smith"}}
+
+;; using hash-map fn to create a map
+(hash-map :a 1 :b 2)
+
+;; getting values from maps
+(get {:a 0 :b 1} :b)
+(get {:a 0 :b {:c "ho hum"}} :b)
+
+(get {:a 0 :b 1} :c "unicorns?")
+(get {:a 0 :b 1} :c {:a "uni"})
+
+;; get-in values from nested maps
+(get-in {:a 0 :b {:c "no hum"}} [:b :c])
+(get-in {:a 0 :b {:c "no hum"}} [:b])
+
+;; getting values, using dictionary as the fn
+({:name "The great Coffepot"} :name)
+
+;; Keywords
+:a 
+:_?
+
+(:a {:a 1 :b 2 :c 3})
+;; same as get
+(get {:a 1 :b 2 :c 3} :a)
+;; default
+(:d {:a 1 :b 2 :c 3} "No gnome knows how homes like Noah knows")
+
+;; VECTORS
