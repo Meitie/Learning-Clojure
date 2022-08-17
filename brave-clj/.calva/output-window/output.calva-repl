@@ -271,3 +271,118 @@ nil
 clj꞉user꞉> 
 nil
 clj꞉user꞉> 
+10
+clj꞉user꞉> 
+24
+clj꞉user꞉> 
+1
+clj꞉user꞉> 
+#object[clojure.core$_PLUS_ 0x617dbebc "clojure.core$_PLUS_@617dbebc"]
+clj꞉user꞉> 
+6
+clj꞉user꞉> 
+6
+clj꞉user꞉> 
+(1 2 3 4)
+clj꞉user꞉> 
+2.1
+clj꞉user꞉> 
+; Execution error (ClassCastException) at user/eval2202 (REPL:178).
+; class clojure.lang.PersistentVector cannot be cast to class java.lang.Number (clojure.lang.PersistentVector is in unnamed module of loader 'bootstrap'; java.lang.Number is in module java.base of loader 'bootstrap')
+clj꞉user꞉> 
+220
+clj꞉user꞉> 
+#'user/too-enthusiastic
+clj꞉user꞉> 
+"OH MY GOSHZeldaAre the best!"
+clj꞉user꞉> 
+#'user/too-enthusiastic
+clj꞉user꞉> 
+"OH MY GOSH Zelda Are the best!"
+clj꞉user꞉> 
+#'user/no-params
+clj꞉user꞉> 
+#'user/codger-communication
+clj꞉user꞉> 
+#'user/codger
+clj꞉user꞉> 
+("Get off my lawn, billy!!!" "Get off my lawn, annie!!!" "Get off my lawn, hulk!!!")
+clj꞉user꞉> 
+; Syntax error compiling at (Learning-Clojure/brave-clj/basics.clj:225:1).
+; Unable to resolve symbol: x-chop2 in this context
+clj꞉user꞉> 
+#'user/x-chop2
+clj꞉user꞉> 
+"I Karate chop harry!"
+clj꞉user꞉> 
+#'user/x-chop2
+clj꞉user꞉> 
+"I slap chop harry!"
+clj꞉user꞉> 
+#'user/favorite-things
+clj꞉user꞉> 
+"Hi, Doreen, here are my fav things: gum, shoes, cars"
+clj꞉user꞉> 
+; Syntax error compiling at (Learning-Clojure/brave-clj/basics.clj:0:0).
+; Unable to resolve symbol: here in this context
+clj꞉user꞉> 
+#'user/favorite-things
+clj꞉user꞉> 
+"Hi, Doreen, here are my fav things: "
+clj꞉user꞉> 
+#'user/favorite-things
+clj꞉user꞉> 
+"Hi, Doreen, here are my fav things: cars"
+clj꞉user꞉> 
+#'user/x-chop2
+clj꞉user꞉> 
+"I (\"slap\") chop harry!"
+clj꞉user꞉> 
+#'user/x-chop2
+clj꞉user꞉> 
+"I Karate chop harry!"
+clj꞉user꞉> 
+#'user/x-chop2
+clj꞉user꞉> 
+"I (\"slap\") chop harry!"
+clj꞉user꞉> 
+#'user/my-first
+clj꞉user꞉> 
+"oven"
+clj꞉user꞉> 
+#'user/my-first
+clj꞉user꞉> 
+"car"
+clj꞉user꞉> 
+#'user/chooser
+clj꞉user꞉> 
+Your first choice is: Marmalade
+Your second choice is: Handsome Jack
+Your unimportant choice is: Pigpen, Aquaman
+nil
+clj꞉user꞉> 
+#'user/chooser
+clj꞉user꞉> 
+Your first choice is: Marmalade
+Your second choice is: Handsome Jack
+Your unimportant choice is: Pigpen, Aquaman
+nil
+clj꞉user꞉> 
+#'user/announce-treasure-location
+clj꞉user꞉> 
+Treausre Lat: 
+Treausre lng: 81.33
+nil
+clj꞉user꞉> 
+#'user/announce-treasure-location
+clj꞉user꞉> 
+Treausre Lat: 28.22
+Treausre lng: 81.33
+nil
+clj꞉user꞉> 
+#'user/announce-treasure-location2
+clj꞉user꞉> 
+Treausre lat: 28.22
+Treausre lng: 81.33
+nil
+clj꞉user꞉> 
