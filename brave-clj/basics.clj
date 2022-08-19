@@ -167,7 +167,7 @@ failed-protagonist-names
 (first [1 2 3 4])
 
 (or + -)
-((or + - ) 1 2 3)
+((or + -) 1 2 3)
 
 ((and (= 1 1) +) 1 2 3)
 ((first [+ 0]) 1 2 3)
@@ -200,14 +200,14 @@ failed-protagonist-names
   [x y]
   (str "Two params! I take " x " and " y))
 
-(def do-things )
+(def do-things)
 
 (defn multi-arity
   ;; 3-arity arugments and body
   ([first-arg second-arg third-arg]
    (do-things first-arg second-arg third-arg))
-  ([first-arg second-arg] 
-   (do-things first-arg second-arg)) 
+  ([first-arg second-arg]
+   (do-things first-arg second-arg))
   ([first-arg]
    (do-things first-arg)))
 
@@ -234,7 +234,7 @@ failed-protagonist-names
   [whippersnapper]
   (str "Get off my lawn, " whippersnapper "!!!"))
 
-(defn codger 
+(defn codger
   [& whippersnappers]
   (map codger-communication whippersnappers))
 
@@ -258,7 +258,7 @@ failed-protagonist-names
   [[first-choice second-choice & unimportant-choices]]
   (println (str "Your first choice is: " first-choice))
   (println (str "Your second choice is: " second-choice))
-  (println (str "Your unimportant choice is: " 
+  (println (str "Your unimportant choice is: "
                 (clojure.string/join ", " unimportant-choices))))
 (chooser ["Marmalade" "Handsome Jack" "Pigpen" "Aquaman"])
 
@@ -267,9 +267,81 @@ failed-protagonist-names
   (println (str "Treausre Lat: " lat))
   (println (str "Treausre lng: " lng)))
 
-(defn announce-treasure-location2 
+(defn announce-treasure-location2
   [{:keys [lat lng]}]
   (println (str "Treausre lat: " lat))
   (println (str "Treausre lng: " lng)))
 
 (announce-treasure-location {:lat 28.22 :lng 81.33})
+(announce-treasure-location2 {:lat 28.22 :lng 81.33})
+
+;; function body
+(defn illustrative-function
+  []
+  (+ 1 304)
+  30
+  "Joe")
+(illustrative-function)
+
+(defn number-comment
+  [x]
+  (if (< x 6)
+    "Oh my gosh that number is low"
+    "Wow what a high number"))
+(number-comment 5)
+(number-comment 7)
+
+;; Anonymous functions
+;;(fn [param-list]
+;;  function body)
+
+(map (fn [name] (str "Hi, " name))
+     ["Darth Vader" "Magoo"])
+
+((fn [x] (* x 3)) 8)
+
+(def my-spec-multi (fn [x] (* x 3)))
+(my-spec-multi 12)
+
+#(* % 3)
+(#(* % 3) 8)
+
+(map #(str "Hi, " %)
+     ["Darth vader" "Maggoo"])
+
+;; Function call
+(* 8 3)
+;; Anony Call
+#(* % 3)
+
+
+((fn [bob jack] (* bob jack 3)) 8 5)
+(#(* %1 %2 3) 8 5)
+
+((fn [bob jack]
+   {:key(* bob jack 3)})
+ 8 5)
+
+(#(vector (* %1 %2 3)) 8 5)
+
+((fn [bob jack]
+   (hash-map :Brian (* bob jack 3)))
+ 8 5)
+
+(hash-map :meitar (#(* %1 %2 3) 8 5))
+(#(hash-map :meitar (* %1 %2 3)) 8 5)
+
+
+(def hash-map-times-fn
+  #(hash-map :Britar (* %1 %2 3)))
+
+(map
+  ;; (partial (fn [bob jack] (* bob jack 3)) 5)
+  ;; (partial #(* %1 %2 3) 5)
+  ;; (partial 
+  ;;  (fn [bob jack] 
+  ;;   (hash-map :Brian (* bob jack 3))) 5)
+ (partial hash-map-times-fn 5)
+ [(+ 1 1) 2 3 4])
+
+(+ (* 1 1 (/ 20 5)) 3)
