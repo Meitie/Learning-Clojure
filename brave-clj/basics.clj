@@ -345,3 +345,18 @@ failed-protagonist-names
  [(+ 1 1) 2 3 4])
 
 (+ (* 1 1 (/ 20 5)) 3)
+
+;; anon fn taking multi params
+(#(str %1 " and " %2) "cornbread" "butter beans")
+
+;; anon fn taking rest params
+(#(identity %&) 1 "blarg" :yip)
+
+(defn inc-maker
+  "Create a custom incrementor"
+  [inc-by]
+  #(+ % inc-by))
+
+(def inc3 (inc-maker 3))
+
+(inc3 7)
