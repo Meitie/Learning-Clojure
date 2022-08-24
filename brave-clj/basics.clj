@@ -319,7 +319,7 @@ failed-protagonist-names
 (#(* %1 %2 3) 8 5)
 
 ((fn [bob jack]
-   {:key(* bob jack 3)})
+   {:key (* bob jack 3)})
  8 5)
 
 (#(vector (* %1 %2 3)) 8 5)
@@ -360,3 +360,184 @@ failed-protagonist-names
 (def inc3 (inc-maker 3))
 
 (inc3 7)
+
+
+
+;; PUTTING IT ALL TOGETHER
+;; HOBBIT MODEL
+
+(def asym-hobbit-body-parts
+  [{:name "head" :size 3}
+   {:name "left-eye" :size 1}
+   {:name "left-ear" :size 1}
+   {:name "mouth" :size 1}
+   {:name "nose" :size 1}
+   {:name "neck" :size 2}
+   {:name "left-shoulder" :size 3}
+   {:name "left-upper-arm" :size 3}
+   {:name "chest" :size 10}
+   {:name "back" :size 10}
+   {:name "left-forearm" :size 3}
+   {:name "abdomen" :size 6}
+   {:name "left-kidney" :size 1}
+   {:name "left-hand" :size 2}
+   {:name "left-knee" :size 2}
+   {:name "left-thigh" :size 4}
+   {:name "left-lower-leg" :size 3}
+   {:name "left-achilles" :size 1}
+   {:name "left-foot" :size 2}])
+
+(defn matching-part
+  [part]
+  {:name (clojure.string/replace (:name part) #"^left-" "right-")
+   :size (:size part)})
+
+(defn symmetrize-body-parts
+  "Expects a seq of maps that have a :name and :size"
+  [asym-body-parts]
+  (loop [remaining-asym-parts asym-body-parts
+         final-body-parts []]
+    (if (empty? remaining-asym-parts)
+      final-body-parts
+      (let [[part & remaining] remaining-asym-parts]
+        (recur remaining
+               (into final-body-parts
+                     (set [part (matching-part part)])))))))
+
+(symmetrize-body-parts asym-hobbit-body-parts)
+
+;; LET
+(let [x 3]
+  x) ;; => 3
+
+(def dalmation-list
+  ["Pongo"])
+(let [dalmations (take 2 dalmation-list)]
+  dalmations)
+
+(def x 0)
+(let [x (inc x)] x)
+
+(let [[pongo & dalmations] dalmation-list]
+  [pongo dalmations])
+
+
+(def dalmation-list
+  ["Pongo"])
+(let [[pongo & [perdita & dalmations]] dalmation-list]
+  [pongo perdita dalmations])
+(let [[pongo perdita & dalmations] dalmation-list]
+  [pongo perdita dalmations])
+
+(def dalmation-list
+  ["Pongo" "Perdita"])
+(defn bob [pongo & [perdita & dalmations]]
+  [pongo perdita dalmations])
+(defn bob2 [pongo perdita & dalmations]
+  [pongo perdita dalmations])
+(bob2 dalmation-list dalmation-list)
+
+
+
+(def dalmation-list
+  ["Pongo"])
+(defn bob [pongo & [perdita & dalmations]]
+  [pongo perdita dalmations])
+(defn bob2 [pongo perdita & dalmations]
+  [pongo perdita dalmations])
+(bob (first dalmation-list) (second dalmation-list) (rest (drop 1 dalmation-list)))
+(bob2 (first dalmation-list) (second dalmation-list) (rest (drop 1 dalmation-list)))
+
+
+
+;; (def dalmation-list
+;;   ["Pongo"])
+
+;; (do 
+;;   (println "starting code")
+;;   (eval `(bob ~@dalmation-list))
+;;   (println "bob 1 ran")
+;;   (eval `(bob2 ~@dalmation-list))
+;;   (println "bob 2 ran"))
+
+;; ~@dalmation-list
+
+;; `(bob ~@dalmation-list)
+
+(into [] (set [:a :a]))
+
+;; Loop
+
+(loop [iteration 0]
+  (println (str "Iteration " iteration))
+  (if (> iteration 3)
+    (println "Goodbye!")
+    (recur (inc iteration))))
+
+;;same loop above as a fn
+(defn recursive-printer
+  ([]
+    (recursive-printer 0))
+  ([iteration]
+   (println iteration)
+   (if (> iteration 3)
+     (println "Goodbye!")
+     (recursive-printer (inc iteration)))))
+(recursive-printer)
+(recursive-printer 1)
+
+;;REGEX
+(re-find #"^left-" "left-eye")
+(re-find #"left-" "cleft-chin")
+(re-find #"^left-" "cleft-chin")
+(re-find #"^left-" "wronglebat")
+
+;; REDUCE
+(reduce + [1 2 3 4])
+;;can be rewritten as:
+(+ (+ (+ 1 2) 3) 4)
+
+(reduce + 15 [ 1 2 3 4])
+
+(defn my-reduce
+  ([f initial coll]
+   (loop [result initial
+          remaining coll]
+     (if (empty? remaining)
+       result
+       (recur (f result (first remaining)) (rest remaining)))))
+  ([f [head & tail]]
+   (my-reduce f head tail)))
+
+(defn better-symmetrize-body-parts
+  "Expects a seq of maps that have a :name and :size"
+  [asym-body-parts]
+  (reduce (fn [final-body-parts part]
+            (into final-body-parts (set [part (matching-part part)])))
+          []
+          asym-body-parts))
+
+(defn hit
+  [asym-body-parts]
+  (let [sym-parts (better-symmetrize-body-parts asym-body-parts)
+        body-part-size-sum (reduce + (map :size sym-parts))
+        target (rand body-part-size-sum)]
+     (loop [[part & remaining] sym-parts
+             accumulated-size (:size part)]
+        (if (> accumulated-size target)
+          part
+          (recur remaining (+ accumulated-size (:size (first remaining))))))))
+
+(hit asym-hobbit-body-parts)
+
+;;excersizes
+(str "helllo " "bob")
+(defn add-onehundred
+  [x]
+  (+ x 100))
+(add-onehundred 20)
+(defn dec-maker
+  [x]
+    #(- % x))
+(def dec9 (dec-maker 9))
+(dec9 10)
