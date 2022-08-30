@@ -16,61 +16,20 @@
 ;      when the cursor is after the last contents at the prompt
 ;   - Clojure lines in stack traces are peekable and clickable.
 clj꞉user꞉>  ; Use `alt+enter` to evaluate
-(1 2 3)
-clj꞉user꞉> 
-(1 2 3)
-clj꞉user꞉> 
-(1 3 2)
-clj꞉user꞉> 
-([:name "bill"] [:occupation "lol"])
-clj꞉user꞉> 
-{:a 1, :b 2, :c 3}
-clj꞉user꞉> 
-(2 3 4)
-clj꞉user꞉> 
-("aA" "bB" "cC")
-clj꞉user꞉> 
-("aA" "bB" "cC")
-clj꞉user꞉> 
-#'user/human-consumption
-clj꞉user꞉> 
-#'user/critter-consumption
-clj꞉user꞉> 
-#'user/unify-diet-data
-clj꞉user꞉> 
-({:human 8.1, :critter 0.0} {:human 7.3, :critter 0.2} {:human 6.6, :critter 0.3} {:human 5.0, :critter 1.1})
-clj꞉user꞉> 
-#'user/sum
-clj꞉user꞉> 
-#'user/avg
-clj꞉user꞉> 
-#'user/stats
-clj꞉user꞉> 
-(17 3 17/3)
-clj꞉user꞉> 
-(144 5 144/5)
-clj꞉user꞉> 
-#'user/identities
-clj꞉user꞉> 
-("Bruce Wayne" "Peter Parker" "Your mom" "Your dad")
-clj꞉user꞉> 
-("Batman" "Spider-Man" "Santa" "Easter Bunny")
-clj꞉user꞉> 
-{:max 31, :min 11}
-clj꞉user꞉> 
-{:human 4.1}
-clj꞉user꞉> 
-(1 2 3)
-clj꞉user꞉> 
-(4 5 6 7 8 9)
+; Syntax error compiling at (brave-clj/basics.clj:631:13).
+; Unable to resolve symbol: food-journal in this context
 clj꞉user꞉> 
 #'user/food-journal
 clj꞉user꞉> 
-#'user/food-journal
+({:month 2, :day 1, :human 4.9, :critter 2.1} {:month 3, :day 1, :human 4.2, :critter 3.3} {:month 3, :day 2, :human 4.0, :critter 3.8} {:month 4, :day 1, :human 3.7, :critter 3.9} {:month 4, :day 2, :human 3.7, :critter 3.6})
 clj꞉user꞉> 
 ({:month 1, :day 1, :human 5.3, :critter 2.3} {:month 1, :day 2, :human 5.1, :critter 2.0} {:month 2, :day 1, :human 4.9, :critter 2.1} {:month 2, :day 2, :human 5.0, :critter 2.5})
 clj꞉user꞉> 
-({:month 3, :day 1, :human 4.2, :critter 3.3} {:month 3, :day 2, :human 4.0, :critter 3.8} {:month 4, :day 1, :human 3.7, :critter 3.9} {:month 4, :day 2, :human 3.7, :critter 3.6})
+({:month 1, :day 1, :human 5.3, :critter 2.3} {:month 1, :day 2, :human 5.1, :critter 2.0} {:month 2, :day 1, :human 4.9, :critter 2.1} {:month 2, :day 2, :human 5.0, :critter 2.5})
 clj꞉user꞉> 
-({:month 2, :day 1, :human 4.9, :critter 2.1} {:month 2, :day 2, :human 5.0, :critter 2.5} {:month 3, :day 1, :human 4.2, :critter 3.3} {:month 3, :day 2, :human 4.0, :critter 3.8})
+nil
+clj꞉user꞉> 
+true
+clj꞉user꞉> 
+{:month 3, :day 1, :human 4.2, :critter 3.3}
 clj꞉user꞉> 

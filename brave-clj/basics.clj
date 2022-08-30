@@ -629,3 +629,14 @@ failed-protagonist-names
 (drop-while #(< (:month %) 3) food-journal)
 (take-while #(< (:month %) 4)
             (drop-while #(< (:month %) 2) food-journal))
+
+
+;; Filter and Some
+(filter #(< (:human %) 5) food-journal)
+(filter #(< (:month %) 3) food-journal)
+
+
+(some #(> (:critter %) 5) food-journal)  
+(some #(> (:critter %) 3) food-journal)
+
+(some #(and (> (:critter  %) 3) %) food-journal)
