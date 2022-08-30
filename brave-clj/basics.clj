@@ -640,3 +640,15 @@ failed-protagonist-names
 (some #(> (:critter %) 3) food-journal)
 
 (some #(and (> (:critter  %) 3) %) food-journal)
+
+
+;; Sort
+(sort [3 1 2])
+(sort-by count ["a" "ccc" "bb" "d"])
+
+
+;; concat
+(concat [1 2 ] [3 4])
+;; note the difference for strings you would use str
+(concat "hello" "world")
+(str "hello" "world")

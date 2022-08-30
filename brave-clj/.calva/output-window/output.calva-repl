@@ -33,3 +33,15 @@ true
 clj꞉user꞉> 
 {:month 3, :day 1, :human 4.2, :critter 3.3}
 clj꞉user꞉> 
+(1 2 3)
+clj꞉user꞉> 
+("a" "bb" "ccc")
+clj꞉user꞉> 
+("a" "d" "bb" "ccc")
+clj꞉user꞉> 
+(1 2 3 4)
+clj꞉user꞉> 
+(\h \e \l \l \o \w \o \r \l \d)
+clj꞉user꞉> 
+"helloworld"
+clj꞉user꞉> 
