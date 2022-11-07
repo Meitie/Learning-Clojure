@@ -652,3 +652,85 @@ failed-protagonist-names
 ;; note the difference for strings you would use str
 (concat "hello" "world")
 (str "hello" "world")
+
+
+;;demonstrating the lazy seq efficiency,
+(def vampire-database
+  {0 {:makes-blood-puns? false, :has-pulse? true  :name "McFishwich"}
+   1 {:makes-blood-puns? false, :has-pulse? true  :name "McMackson"}
+   2 {:makes-blood-puns? true,  :has-pulse? false :name "Damon Salvatore"}
+   3 {:makes-blood-puns? true,  :has-pulse? true  :name "Mickey Mouse"}})
+
+(defn vampire-related-details
+  [social-security-number]
+  (Thread/sleep 1000)
+  (get vampire-database social-security-number))
+
+(defn vampire?
+  [record]
+  (and (:makes-blood-puns? record)
+       (not (:has-pulse? record))
+       record))
+
+(defn identify-vampire
+  [social-security-numbers]
+  (first (filter vampire?
+                 (map vampire-related-details social-security-numbers))))
+
+(time (vampire-related-details 0))
+(time (def mapped-details (map vampire-related-details (range 0 1000000))))
+(time (first mapped-details))
+(time (identify-vampire (range 0 1000000)))
+
+;; infinite sequence
+(concat (take 8 (repeat "na")) ["Batman!"])
+(take 3 (repeatedly (fn [] (rand-int 10))))
+
+
+;; INTO
+;; ==========================================================
+
+(map identity {:sunlight-reaction "glitter"})
+
+(into {} (map identity {:sunlight-reaction "Glitter!"}))
+
+
+(into {:favorite-emotion "gloomy"} [[:sunlight-reaction "Glitter!"]])
+; => {:favorite-emotion "gloomy" :sunlight-reaction "Glitter!"}
+
+(into ["cherry"] '("pine" "spruce"))
+
+
+
+;; CONJ
+;; ==============================================================
+
+
+(conj [0] [1])
+
+(into [0] [1])
+
+(conj [0] 1)
+
+(conj [0] [1] [2])
+
+(conj [0] 1 2 3 4)
+
+(conj {:time "midnight"} [:place "ye olde cemetarium"])
+
+;; ==============================================================
+
+(peek '(:a :b :c :d :e))
+(pop '(:a :b :c :d :e))
+(set '(1 1 2 2 3 3 4 4 5 5))
+(:a {:a 1, :b 2})
+
+
+
+;; apply
+;; ==============================================================
+
+(max 0 1 2)
+;(max [0 1 2])
+
+(apply max [0 1 2])

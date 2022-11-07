@@ -39,3 +39,6 @@ clj꞉clojure-noob.core꞉> 
 (1 "blarg" :yip)
 clj꞉clojure-noob.core꞉> 
 ; nREPL Connection was closed
+; Connecting ...
+; No nrepl port file found.
+; Bad url: localhost:

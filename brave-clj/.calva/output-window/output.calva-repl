@@ -6,6 +6,21 @@
 
 ; Connecting ...
 ; No nrepl port file found.
+; Bad url: localhost:
+; Connecting ...
+; No nrepl port file found.
+; Hooking up nREPL sessions...
+; Connecting ...
+; No nrepl port file found.
+; Bad url: localhost:
+; Jacking in...
+; Starting Jack-in Terminal: java -jar '/home/meitar/.vscode/extensions/betterthantomorrow.calva-2.0.317/deps.clj.jar' -Sdeps '{:deps {nrepl/nrepl {:mvn/version,"1.0.0"},cider/cider-nrepl {:mvn/version,"0.28.5"}}}' -M -m nrepl.cmdline --middleware "[cider.nrepl/cider-middleware]"
+; Jacking in...
+; Starting Jack-in Terminal: java -jar '/home/meitar/.vscode/extensions/betterthantomorrow.calva-2.0.317/deps.clj.jar' -Sdeps '{:deps {nrepl/nrepl {:mvn/version,"1.0.0"},cider/cider-nrepl {:mvn/version,"0.28.5"}}}' -M -m nrepl.cmdline --middleware "[cider.nrepl/cider-middleware]"
+; Jacking in...
+; Aborting jack-in. No project type selected.
+; Connecting ...
+; No nrepl port file found.
 ; Hooking up nREPL sessions...
 ; Connected session: clj
 ; TIPS:
@@ -16,32 +31,217 @@
 ;      when the cursor is after the last contents at the prompt
 ;   - Clojure lines in stack traces are peekable and clickable.
 clj꞉user꞉>  ; Use `alt+enter` to evaluate
-; Syntax error compiling at (brave-clj/basics.clj:631:13).
+clj꞉user꞉> 
+clj꞉user꞉> 
+clj꞉user꞉> 
+(time)
+; Execution error (ArityException) at nrepl.middleware.interruptible-eval/evaluate (interruptible_eval.clj:79).
+; Wrong number of args (0) passed to: clojure.core/time
+clj꞉user꞉> 
+(food-journal)
+; Syntax error compiling at (brave-clj/.calva/output-window/output.calva-repl:41:1).
 ; Unable to resolve symbol: food-journal in this context
 clj꞉user꞉> 
-#'user/food-journal
+(println food-journal)
+; Syntax error compiling at (brave-clj/.calva/output-window/output.calva-repl:45:1).
+; Unable to resolve symbol: food-journal in this context
 clj꞉user꞉> 
-({:month 2, :day 1, :human 4.9, :critter 2.1} {:month 3, :day 1, :human 4.2, :critter 3.3} {:month 3, :day 2, :human 4.0, :critter 3.8} {:month 4, :day 1, :human 3.7, :critter 3.9} {:month 4, :day 2, :human 3.7, :critter 3.6})
 clj꞉user꞉> 
-({:month 1, :day 1, :human 5.3, :critter 2.3} {:month 1, :day 2, :human 5.1, :critter 2.0} {:month 2, :day 1, :human 4.9, :critter 2.1} {:month 2, :day 2, :human 5.0, :critter 2.5})
 clj꞉user꞉> 
-({:month 1, :day 1, :human 5.3, :critter 2.3} {:month 1, :day 2, :human 5.1, :critter 2.0} {:month 2, :day 1, :human 4.9, :critter 2.1} {:month 2, :day 2, :human 5.0, :critter 2.5})
+(exit)
+; Syntax error compiling at (brave-clj/.calva/output-window/output.calva-repl:51:1).
+; Unable to resolve symbol: exit in this context
 clj꞉user꞉> 
+; Connecting ...
+; No nrepl port file found.
+; Bad url: nrepl://127.0.0.1:40939
+; Jacking in...
+; Starting Jack-in Terminal: java -jar '/home/meitar/.vscode/extensions/betterthantomorrow.calva-2.0.317/deps.clj.jar' -Sdeps '{:deps {nrepl/nrepl {:mvn/version,"1.0.0"},cider/cider-nrepl {:mvn/version,"0.28.5"}}}' -M -m nrepl.cmdline --middleware "[cider.nrepl/cider-middleware]"
+; Jacking in...
+; nREPL Connection was closed
+; Starting Jack-in Terminal: java -jar '/home/meitar/.vscode/extensions/betterthantomorrow.calva-2.0.317/deps.clj.jar' -Sdeps '{:deps {nrepl/nrepl {:mvn/version,"1.0.0"},cider/cider-nrepl {:mvn/version,"0.28.5"}}}' -M -m nrepl.cmdline --middleware "[cider.nrepl/cider-middleware]"
+; Connecting ...
+; No nrepl port file found.
+; Hooking up nREPL sessions...
+; Connected session: clj
+; TIPS:
+;   - You can edit the contents here. Use it as a REPL if you like.
+;   - `alt+enter` evaluates the current top level form.
+;   - `ctrl+enter` evaluates the current form.
+;   - `alt+up` and `alt+down` traverse up and down the REPL command history
+;      when the cursor is after the last contents at the prompt
+;   - Clojure lines in stack traces are peekable and clickable.
+clj꞉user꞉> (load-file "/home/meitar/Desktop/Learning-Clojure/brave-clj/basics.clj")
+Success!
+Success!
+Your first choice is: Marmalade
+Your second choice is: Handsome Jack
+Your unimportant choice is: Pigpen, Aquaman
+Treausre Lat: 28.22
+Treausre lng: 81.33
+Treausre lat: 28.22
+Treausre lng: 81.33
+Iteration 0
+Iteration 1
+Iteration 2
+Iteration 3
+Iteration 4
+Goodbye!
+0
+1
+2
+3
+4
+Goodbye!
+1
+2
+3
+4
+Goodbye!
+"Elapsed time: 1000.251411 msecs"
+"Elapsed time: 0.06586 msecs"
+(use 'basics.clj)
+(println food-journal)
+"Elapsed time: 32005.256959 msecs"
+"Elapsed time: 32006.265556 msecs"
+(0 3 3)
+clj꞉user꞉> 
+; Execution error (FileNotFoundException) at user/eval2568 (REPL:103).
+; Could not locate basics/clj__init.class, basics/clj.clj or basics/clj.cljc on classpath.
+clj꞉user꞉> 
+[{:month 1, :day 1, :human 5.3, :critter 2.3} {:month 1, :day 2, :human 5.1, :critter 2.0} {:month 2, :day 1, :human 4.9, :critter 2.1} {:month 2, :day 2, :human 5.0, :critter 2.5} {:month 3, :day 1, :human 4.2, :critter 3.3} {:month 3, :day 2, :human 4.0, :critter 3.8} {:month 4, :day 1, :human 3.7, :critter 3.9} {:month 4, :day 2, :human 3.7, :critter 3.6}]
 nil
 clj꞉user꞉> 
-true
+[{:month 1, :day 1, :human 5.3, :critter 2.3} {:month 1, :day 2, :human 5.1, :critter 2.0} {:month 2, :day 1, :human 4.9, :critter 2.1} {:month 2, :day 2, :human 5.0, :critter 2.5} {:month 3, :day 1, :human 4.2, :critter 3.3} {:month 3, :day 2, :human 4.0, :critter 3.8} {:month 4, :day 1, :human 3.7, :critter 3.9} {:month 4, :day 2, :human 3.7, :critter 3.6}]
+nil
 clj꞉user꞉> 
-{:month 3, :day 1, :human 4.2, :critter 3.3}
+[{:month 1, :day 1, :human 5.3, :critter 2.3} {:month 1, :day 2, :human 5.1, :critter 2.0} {:month 2, :day 1, :human 4.9, :critter 2.1} {:month 2, :day 2, :human 5.0, :critter 2.5} {:month 3, :day 1, :human 4.2, :critter 3.3} {:month 3, :day 2, :human 4.0, :critter 3.8} {:month 4, :day 1, :human 3.7, :critter 3.9} {:month 4, :day 2, :human 3.7, :critter 3.6}]
+nil
 clj꞉user꞉> 
-(1 2 3)
+(println food-journal)\
+[{:month 1, :day 1, :human 5.3, :critter 2.3} {:month 1, :day 2, :human 5.1, :critter 2.0} {:month 2, :day 1, :human 4.9, :critter 2.1} {:month 2, :day 2, :human 5.0, :critter 2.5} {:month 3, :day 1, :human 4.2, :critter 3.3} {:month 3, :day 2, :human 4.0, :critter 3.8} {:month 4, :day 1, :human 3.7, :critter 3.9} {:month 4, :day 2, :human 3.7, :critter 3.6}]
+nil
 clj꞉user꞉> 
-("a" "bb" "ccc")
+(println food-journal)
+[{:month 1, :day 1, :human 5.3, :critter 2.3} {:month 1, :day 2, :human 5.1, :critter 2.0} {:month 2, :day 1, :human 4.9, :critter 2.1} {:month 2, :day 2, :human 5.0, :critter 2.5} {:month 3, :day 1, :human 4.2, :critter 3.3} {:month 3, :day 2, :human 4.0, :critter 3.8} {:month 4, :day 1, :human 3.7, :critter 3.9} {:month 4, :day 2, :human 3.7, :critter 3.6}]
+nil
+clj꞉user꞉> (println bobed)
+; Syntax error compiling at (brave-clj/.calva/output-window/output.calva-repl:128:12).
+; Unable to resolve symbol: bobed in this context
 clj꞉user꞉> 
-("a" "d" "bb" "ccc")
+(println bobed)
+; Could not locate basics/clj__init.class, basics/clj.clj or basics/clj.cljc on classpath.
+; Execution error (FileNotFoundException) at user/eval2581 (REPL:132).
 clj꞉user꞉> 
-(1 2 3 4)
+(use 'basics.clj)
+; Syntax error compiling at (brave-clj/.calva/output-window/output.calva-repl:136:1).
+; Unable to resolve symbol: bobed in this context
 clj꞉user꞉> 
-(\h \e \l \l \o \w \o \r \l \d)
+(use 'home.meitar.Desktop.Learning-Clojure.brave-clj.basics)
+; Execution error (FileNotFoundException) at user/eval2584 (REPL:140).
+; Could not locate home/meitar/Desktop/Learning_Clojure/brave_clj/basics__init.class, home/meitar/Desktop/Learning_Clojure/brave_clj/basics.clj or home/meitar/Desktop/Learning_Clojure/brave_clj/basics.cljc on classpath. Please check that namespaces with dashes use underscores in the Clojure file name.
 clj꞉user꞉> 
-"helloworld"
+(use 'home.meitar.Desktop.Learning-Clojure.brave-clj.basics  :reload-all)
+; Execution error (FileNotFoundException) at user/eval2586 (REPL:144).
+; Could not locate home/meitar/Desktop/Learning_Clojure/brave_clj/basics__init.class, home/meitar/Desktop/Learning_Clojure/brave_clj/basics.clj or home/meitar/Desktop/Learning_Clojure/brave_clj/basics.cljc on classpath. Please check that namespaces with dashes use underscores in the Clojure file name.
+clj꞉user꞉> 
+(use 'Learning-Clojure.brave-clj.basics  :reload-all)
+; Execution error (FileNotFoundException) at user/eval2588 (REPL:148).
+; Could not locate Learning_Clojure/brave_clj/basics__init.class, Learning_Clojure/brave_clj/basics.clj or Learning_Clojure/brave_clj/basics.cljc on classpath. Please check that namespaces with dashes use underscores in the Clojure file name.
+clj꞉user꞉> 
+clojure.string/replace
+#object[clojure.string$replace 0x5d1dc0eb "clojure.string$replace@5d1dc0eb"]
+clj꞉user꞉> 
+([:sunlight-reaction "glitter"])
+clj꞉user꞉> 
+{:sunlight-reaction "Glitter!"}
+clj꞉user꞉> (explain peek)
+; Syntax error compiling at (brave-clj/.calva/output-window/output.calva-repl:158:12).
+; Unable to resolve symbol: explain in this context
+clj꞉user꞉> 
+(:a :b :c :d :e)
+clj꞉user꞉> 
+:a
+clj꞉user꞉> 
+:a
+clj꞉user꞉> 
+:a
+clj꞉user꞉> 
+:a
+clj꞉user꞉> 
+:a
+clj꞉user꞉> 
+:a
+clj꞉user꞉> 
+(:b :c :d :e)
+clj꞉user꞉> 
+#{1 4 3 2 5}
+clj꞉user꞉> 
+1
+clj꞉user꞉> 
+{:favorite-emotion "gloomy", :sunlight-reaction "Glitter!"}
+clj꞉user꞉> 
+{:favorite-emotion "gloomy", :sunlight-reaction "Glitter!"}
+clj꞉user꞉> 
+["cherry" "pine" "spruce"]
+clj꞉user꞉> 
+[0 [1]]
+clj꞉user꞉> 
+[0 1]
+clj꞉user꞉> 
+[0 1]
+clj꞉user꞉> 
+[0 [1] [2]]
+clj꞉user꞉> 
+[0 1 2 3 4]
+clj꞉user꞉> 
+0
+clj꞉user꞉> 
+{:time "midnight", :place "ye olde cemetarium"}
+clj꞉user꞉> 
+2
+clj꞉user꞉> 
+[0 1 2]
+clj꞉user꞉> 
+2
+clj꞉user꞉> 
+2
+clj꞉user꞉> 
+; Syntax error compiling at (brave-clj/basics.clj:742:1).
+; Unable to resolve symbol: my-into in this context
+clj꞉user꞉> 
+[0 1 2 3]
+clj꞉user꞉> 
+; Syntax error compiling at (brave-clj/basics.clj:742:1).
+; Unable to resolve symbol: my-into in this context
+clj꞉user꞉> 
+#'user/my-into
+clj꞉user꞉> 
+[0 1 2 3]
+clj꞉user꞉> 
+#'user/add10
+clj꞉user꞉> 
+13
+clj꞉user꞉> 
+15
+clj꞉user꞉> 
+#'user/add-missing-elements
+clj꞉user꞉> 
+["water" "earth" "air" "unobtainium" "adamantium"]
+clj꞉user꞉> 
+#'user/lousy-logger
+clj꞉user꞉> 
+#'user/warn
+clj꞉user꞉> 
+"red light ahead"
+clj꞉user꞉> 
+square 9
+9
+clj꞉user꞉> 
+(square 9)
+; Syntax error compiling at (brave-clj/.calva/output-window/output.calva-repl:241:1).
+; Unable to resolve symbol: square in this context
+clj꞉user꞉> 
+; Syntax error compiling at (brave-clj/basics.clj:772:1).
+; Unable to resolve symbol: square in this context
 clj꞉user꞉> 
